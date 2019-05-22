@@ -7,15 +7,22 @@
 //
 
 import UIKit
-
+import CoreLocation
 class DetailsViewController: UIViewController {
 
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var localisation: UILabel!
+    var _city : City = City(name: "Aucune", coordinates: CLLocationCoordinate2D(latitude: 000, longitude: 000))
+    var latitude: String  = ""
+    var longitude: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = _city.name
+        self.latitude = String(_city.coordinates.latitude)
+        self.longitude = String(_city.coordinates.longitude)
+        self.city.text = _city.name
+        self.localisation.text = "\(latitude) , \(longitude)"
+        
     }
 }

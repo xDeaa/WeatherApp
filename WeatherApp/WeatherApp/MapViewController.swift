@@ -27,10 +27,9 @@ class MapViewController: UIViewController, MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let city = view.annotation?.title, let localisation = view.annotation?.coordinate {
-            
-//            let vc = self.storyboard?.instantiateViewController(withIdentifier: “DetailsViewController”) as? DetailsViewController
-//            vc?.city = City(name: _city ?? “Unknown city name”, coordinates: _coords)
-//            self.navigationController?.pushViewController(vc!, animated: true)
+            let detailsController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsCity") as? DetailsViewController
+            detailsController?._city = City(name: city ?? "Unknown city name", coordinates: localisation)
+            self.navigationController?.pushViewController(detailsController!, animated: true)
         }
     }
 
