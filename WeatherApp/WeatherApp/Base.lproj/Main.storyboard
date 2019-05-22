@@ -63,35 +63,9 @@
                     <view key="view" contentMode="scaleToFill" id="Hpv-Yc-B7K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDF-O7-Fy9">
-                                <rect key="frame" x="27" y="80" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordonnées" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKw-08-8rx">
-                                <rect key="frame" x="27" y="118" width="103" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="iKw-08-8rx" firstAttribute="top" secondItem="fDF-O7-Fy9" secondAttribute="bottom" constant="17" id="0bg-y3-Inh"/>
-                            <constraint firstItem="aQA-RU-GfB" firstAttribute="trailing" secondItem="fDF-O7-Fy9" secondAttribute="trailing" constant="317" id="IVk-kp-CB2"/>
-                            <constraint firstItem="aQA-RU-GfB" firstAttribute="trailing" secondItem="iKw-08-8rx" secondAttribute="trailing" constant="245" id="YoI-yj-W3K"/>
-                            <constraint firstItem="fDF-O7-Fy9" firstAttribute="leading" secondItem="aQA-RU-GfB" secondAttribute="leading" constant="27" id="Zeh-OP-Nip"/>
-                            <constraint firstItem="fDF-O7-Fy9" firstAttribute="top" secondItem="aQA-RU-GfB" secondAttribute="top" constant="60" id="dJd-UY-eHj"/>
-                            <constraint firstItem="iKw-08-8rx" firstAttribute="leading" secondItem="aQA-RU-GfB" secondAttribute="leading" constant="27" id="v4V-cQ-tZr"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aQA-RU-GfB"/>
                     </view>
-                    <connections>
-                        <outlet property="city" destination="fDF-O7-Fy9" id="eT7-px-9cT"/>
-                        <outlet property="localisation" destination="iKw-08-8rx" id="nUd-IA-eAr"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XW-VD-CZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
