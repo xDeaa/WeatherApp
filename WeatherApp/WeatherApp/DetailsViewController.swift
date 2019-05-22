@@ -27,6 +27,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.register(UINib(nibName: "SummaryCell", bundle: nil), forCellReuseIdentifier: "summaryCell")
         tableView.register(UINib(nibName: "DailyCell", bundle: nil), forCellReuseIdentifier: "dailyCell")
         tableView.register(UINib(nibName: "HourlyCell", bundle: nil), forCellReuseIdentifier: "hourlyCell")
+        tableView.register(UINib(nibName: "ExtraInfoCell", bundle: nil), forCellReuseIdentifier: "extraCell")
         requestWeather(latitude: self.latitude, longitude: self.longitude)
     }
     
@@ -36,7 +37,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             decoder.dateDecodingStrategy = .secondsSince1970
             self.weather = try? decoder.decode(Weather.self, from: data)
             self.tableView.reloadData()
-//            print(self.weather)
+            print(self.weather)
         }){ (Error) in
             print(Error)
         }
@@ -45,15 +46,6 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if section == 1 {
-//            return "Titles"
-//        }else if section == 2{
-//            return "Sibling"
-//        }
-//        return nil
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
@@ -89,6 +81,18 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     return dailyCell
                 }
             }
+        case 3:
+            if indexPath.row == 0 {
+                if let extraCell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as? ExtraInfoCell {
+                    extraCell.setInfo(titleLeft: "Humidity", value: self.weather?.currently, tilteRigth: "Wind Speed")
+                    return extraCell
+                }
+            }else{
+                if let extraCell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as? ExtraInfoCell {
+                    extraCell.setInfo(titleLeft: "Pressure", value: self.weather?.currently, tilteRigth: "UV Index")
+                    return extraCell
+                }
+            }
         default:
             return UITableViewCell()
         }
@@ -107,6 +111,10 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         if section == 2 {
             return self.weather?.daily?.data?.count ?? 0
         }
+        if section == 3 {
+            return 2
+        }
+        
         return 1
     }
 }
