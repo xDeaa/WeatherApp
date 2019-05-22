@@ -37,7 +37,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             decoder.dateDecodingStrategy = .secondsSince1970
             self.weather = try? decoder.decode(Weather.self, from: data)
             self.tableView.reloadData()
-            print(self.weather)
+            print(self.weather ?? "" )
         }){ (Error) in
             print(Error)
         }
@@ -117,4 +117,14 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return 1
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//
+//        if indexPath.section == 2{
+//            if character != nil {
+//                requestCharacters(name: self.character?.family[indexPath.row])
+//            }
+//        }
+//    }
 }
