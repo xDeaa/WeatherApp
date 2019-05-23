@@ -21,6 +21,11 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.title = _city.name
         self.latitude = String(_city.coordinates.latitude)
         self.longitude = String(_city.coordinates.longitude)
+        initTableView()
+        requestWeather(latitude: self.latitude, longitude: self.longitude)
+    }
+    
+    func initTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "headerCell")
@@ -28,7 +33,6 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.register(UINib(nibName: "DailyCell", bundle: nil), forCellReuseIdentifier: "dailyCell")
         tableView.register(UINib(nibName: "HourlyCell", bundle: nil), forCellReuseIdentifier: "hourlyCell")
         tableView.register(UINib(nibName: "ExtraInfoCell", bundle: nil), forCellReuseIdentifier: "extraCell")
-        requestWeather(latitude: self.latitude, longitude: self.longitude)
     }
     
     func requestWeather(latitude:String,longitude:String){
@@ -37,7 +41,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             decoder.dateDecodingStrategy = .secondsSince1970
             self.weather = try? decoder.decode(Weather.self, from: data)
             self.tableView.reloadData()
-            //print(self.weather ?? "" )
+            print(self.weather ?? "" )
         }){ (Error) in
             print(Error)
         }
@@ -51,16 +55,13 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         switch indexPath.section {
         case 0:
             if let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as? HeaderCell {
-                headerCell.setTemperature(image: self.weather?.currently?.icon, temperature: "\(self.weather?.currently?.temperature?.rounded() ?? 10.0 )" , resume: self.weather?.currently?.summary)
+                headerCell.setTemperature(data: self.weather?.currently)
                 return headerCell
             }
             
         case 1:
             if indexPath.row == 0 {
-                if let summaryCell = tableView.dequeueReusableCell(withIdentifier: "summaryCell", for: indexPath) as? SummaryCell {
-                    summaryCell.setSummarry(name: self.weather?.hourly?.summary)
-                    return summaryCell
-                }
+                return initSummaryCell(param: self.weather?.hourly?.summary, indexPath: indexPath)
             }else{
                 if let hourlyCell = tableView.dequeueReusableCell(withIdentifier: "hourlyCell", for: indexPath) as? HourlyCell {
                     hourlyCell.setData(data: self.weather?.hourly?.data?[indexPath.row - 1])
@@ -70,28 +71,23 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         case 2:
             if indexPath.row == 0 {
-                if let summaryCell = tableView.dequeueReusableCell(withIdentifier: "summaryCell", for: indexPath) as? SummaryCell {
-                    summaryCell.setSummarry(name: self.weather?.daily?.summary)
-                    return summaryCell
-                }
+                return initSummaryCell(param: self.weather?.daily?.summary, indexPath: indexPath)
             }else{
                 if let dailyCell = tableView.dequeueReusableCell(withIdentifier: "dailyCell", for: indexPath) as? DailyCell {
                     dailyCell.dailyDetails = self.weather?.daily?.data
-
                     return dailyCell
                 }
             }
         case 3:
+            let extraCell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as? ExtraInfoCell
+            let cell = extraCell ?? UITableViewCell()
             if indexPath.row == 0 {
-                if let extraCell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as? ExtraInfoCell {
-                    extraCell.setInfo(titleLeft: "Humidity", value: self.weather?.currently, tilteRigth: "Wind Speed")
-                    return extraCell
-                }
+                extraCell?.setInfo(titleLeft: "Humidity", value: self.weather?.currently, tilteRigth: "Wind Speed")
+                return cell
+                
             }else{
-                if let extraCell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as? ExtraInfoCell {
-                    extraCell.setInfo(titleLeft: "Pressure", value: self.weather?.currently, tilteRigth: "UV Index")
-                    return extraCell
-                }
+                extraCell?.setInfo(titleLeft: "Pressure", value: self.weather?.currently, tilteRigth: "UV Index")
+                return cell
             }
         default:
             return UITableViewCell()
@@ -100,25 +96,30 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         return UITableViewCell()
     }
     
+    func initSummaryCell(param: String?, indexPath: IndexPath) -> UITableViewCell {
+        if let summaryCell = tableView.dequeueReusableCell(withIdentifier: "summaryCell", for: indexPath) as? SummaryCell {
+            summaryCell.setSummarry(name: param)
+            return summaryCell
+        }
+        return UITableViewCell()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        switch section {
+        case 0:
             return 1
-        }
-        if section == 1{
-            return 1 + (self.weather?.hourly?.data?.count ?? 0)
-        }
-
-        if section == 2 {
+        case 1:
+            return 1 + (self.weather?.hourly?.data?.prefix(24).count ?? 0)
+        case 2:
             if (self.weather?.daily?.data?.count ?? 0 > 0) {
                 return 2
             } else {
                 return 0
             }
-        }
-        if section == 3 {
+        case 3:
             return 2
+        default:
+            return 1
         }
-        
-        return 1
     }
 }

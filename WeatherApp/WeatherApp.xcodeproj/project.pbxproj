@@ -152,6 +152,7 @@
 		4D0CE5EA2295222F0002B533 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				948316F92297194400B3638B /* Config */,
 				4D0CE629229546D60002B533 /* Cell */,
 				4D0CE61A229522EB0002B533 /* Model */,
 				4D0CE619229522E20002B533 /* Controller */,
@@ -196,7 +197,6 @@
 			children = (
 				4D0CE61D2295232A0002B533 /* CitiesData.swift */,
 				4D0CE61F2295254C0002B533 /* City.swift */,
-				4D0CE623229539070002B533 /* RequestManager.swift */,
 				4D0CE62522953BE50002B533 /* Weather.swift */,
 			);
 			path = Model;
@@ -250,6 +250,14 @@
 				1C3F478C984E307A820DDDB0 /* Pods-WeatherAppUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		948316F92297194400B3638B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4D0CE623229539070002B533 /* RequestManager.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		D50FA49CCA8A150C7AD5B938 /* Frameworks */ = {
@@ -334,13 +342,16 @@
 				TargetAttributes = {
 					4D0CE5E72295222F0002B533 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					4D0CE5FB229522300002B533 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 4D0CE5E72295222F0002B533;
 					};
 					4D0CE606229522300002B533 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 4D0CE5E72295222F0002B533;
 					};
 				};
@@ -694,7 +705,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.WeatherApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -712,7 +723,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.WeatherApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -732,7 +743,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.WeatherAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApp.app/WeatherApp";
 			};
@@ -753,7 +764,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.WeatherAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherApp.app/WeatherApp";
 			};
@@ -773,7 +784,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.WeatherAppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WeatherApp;
 			};
@@ -793,7 +804,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.WeatherAppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WeatherApp;
 			};
