@@ -117,14 +117,4 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return 1
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//        if indexPath.section == 2{
-//            if character != nil {
-//                requestCharacters(name: self.character?.family[indexPath.row])
-//            }
-//        }
-//    }
 }

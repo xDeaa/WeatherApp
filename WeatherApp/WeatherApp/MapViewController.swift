@@ -8,20 +8,27 @@
 
 import UIKit
 import MapKit
-class MapViewController: UIViewController, MKMapViewDelegate{
-
+class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource{
+    
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var choiceButton: UISegmentedControl!
+    
+    @IBOutlet weak var tableView: UITableView!
     let cities: [City] = CitiesData.list
     
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.isHidden = true
+        tableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "listCell")
+        
         for city in cities {
             let pin = MKPointAnnotation()
             pin.title = city.name
             pin.coordinate = city.coordinates
             map.addAnnotation(pin)
-            
         }
     }
     
@@ -33,6 +40,40 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         }
     }
 
-
+    @IBAction func choiceDisplay(_ sender: Any) {
+        if choiceButton.selectedSegmentIndex == 1{
+            map.isHidden = true
+            tableView.isHidden = false
+            
+        }else{
+            map.isHidden = false
+            tableView.isHidden = true
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cityCell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as? ListCell {
+            cityCell.setCity(city: cities[indexPath.row].name)
+            return cityCell
+        }
+        return UITableViewCell()
+    }
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+    
+            if !cities.isEmpty {
+                let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+                let detailsController = storyBoard.instantiateViewController(withIdentifier: "DetailsCity") as! DetailsViewController
+                detailsController._city = self.cities[indexPath.row]
+                
+                self.navigationController?.pushViewController(detailsController, animated:true)
+            }
+        }
 }
 

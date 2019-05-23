@@ -37,19 +37,43 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aXs-Io-sZ4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5mA-i3-XBl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5mA-i3-XBl" secondAttribute="trailing" id="9nX-Oj-a2I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aXs-Io-sZ4" secondAttribute="bottom" id="J1l-ya-anp"/>
+                            <constraint firstItem="5mA-i3-XBl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nrl-kX-muL"/>
+                            <constraint firstItem="5mA-i3-XBl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V4u-Zn-ggf"/>
                             <constraint firstItem="aXs-Io-sZ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cXn-Ee-xBW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aXs-Io-sZ4" secondAttribute="trailing" id="fQ7-FU-4ld"/>
                             <constraint firstItem="aXs-Io-sZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gvI-m8-9Ih"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5mA-i3-XBl" secondAttribute="bottom" id="ojT-da-yim"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cjS-Qa-YtR"/>
+                    <navigationItem key="navigationItem" id="cjS-Qa-YtR">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Zgl-bm-PN9">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="VrS-cT-jtS">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="List"/>
+                                </segments>
+                                <connections>
+                                    <action selector="choiceDisplay:" destination="BYZ-38-t0r" eventType="valueChanged" id="tC0-rX-FcV"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="choiceButton" destination="VrS-cT-jtS" id="SRw-7H-hgk"/>
                         <outlet property="map" destination="aXs-Io-sZ4" id="GdS-Wz-b0j"/>
+                        <outlet property="tableView" destination="5mA-i3-XBl" id="hzE-Wh-yoF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
