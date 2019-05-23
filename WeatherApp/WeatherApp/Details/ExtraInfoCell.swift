@@ -20,9 +20,11 @@ class ExtraInfoCell: UITableViewCell {
         
         switch leftInfo.text {
         case "Humidity":
-            self.leftValue.text = "\(value?.humidity ?? 00.0) %"
+            if let _humidity = value?.humidity {
+                self.leftValue.text = "\((_humidity * 100).toRoundString())%"
+            }
         case "Pressure":
-            self.leftValue.text = "\(value?.pressure ?? 00.0) hPA"
+            self.leftValue.text = "\(value?.pressure ?? 00.00) hPA"
         default:
             self.leftValue.text = "-"
         }

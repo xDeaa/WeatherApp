@@ -14,15 +14,24 @@ class HourlyCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var temp: UIImageView!
+    @IBOutlet weak var humidity: UIImageView!
     
     func setData(data: Currently?){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH"
         self.icon.image = UIImage(named:data?.icon ?? "")
-        if data?.humidity != 0.0 {
-            self.humidityLabel.text = "\(data?.humidity ?? 00.01)%"
+        self.humidity.image = UIImage(named: "humidity.png")
+        if let _humidity = data?.humidity {
+            self.humidityLabel.text = "\((_humidity * 100).toRoundString())"
         }
         self.hoursLabel.text = dateFormatter.string(from: data?.time ?? Date.init())
-        self.temperatureLabel.text = "\(data?.temperature?.rounded() ?? 00.00)°C"
+        self.temperatureLabel.text = "\(data?.temperature?.toRoundString() ?? "")°C"
+        
+        if data?.temperature ?? 0.0 > 18.0{
+            self.temp.image = UIImage(named: "hot.png")
+        }else{
+            self.temp.image = UIImage(named: "cold.png")
+        }
     }
 }

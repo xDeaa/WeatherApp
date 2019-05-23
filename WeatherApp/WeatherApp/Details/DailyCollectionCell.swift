@@ -15,6 +15,8 @@ class DailyCollectionCell: UICollectionViewCell {
     @IBOutlet weak var temperatureMin: UILabel!
     @IBOutlet weak var temperatureMax: UILabel!
     @IBOutlet weak var view: UIView!
+    @IBOutlet weak var min: UIImageView!
+    @IBOutlet weak var max: UIImageView!
     
     func setData(data: Datum?){
         
@@ -22,8 +24,10 @@ class DailyCollectionCell: UICollectionViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         self.daysLabel.text = dateFormatter.string(from: data?.time ?? Date.init())
-        self.temperatureMax.text = "\(data?.temperatureMax?.rounded() ?? 00.00)°C"
-        self.temperatureMin.text = "\(data?.temperatureMin?.rounded() ?? 00.00)°C"
+        self.temperatureMax.text = "\(data?.temperatureMax?.toRoundString() ?? "")°C"
+        self.temperatureMin.text = "\(data?.temperatureMin?.toRoundString()  ?? "")°C"
+        self.min.image = UIImage(named: "cold.png")
+        self.max.image = UIImage(named: "hot.png")
         changeColor(image: data?.icon ?? "" )
     }
     
@@ -55,4 +59,10 @@ class DailyCollectionCell: UICollectionViewCell {
         }
     }
 
+}
+
+extension Double {
+    func toRoundString() -> String {
+        return String(format: "%.0f", self)
+    }
 }
