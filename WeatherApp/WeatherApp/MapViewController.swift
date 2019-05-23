@@ -44,11 +44,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         if choiceButton.selectedSegmentIndex == 1{
             map.isHidden = true
             tableView.isHidden = false
-            
         }else{
             map.isHidden = false
             tableView.isHidden = true
-            
         }
     }
     
@@ -64,16 +62,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         return UITableViewCell()
     }
     
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
-    
-            if !cities.isEmpty {
-                let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-                let detailsController = storyBoard.instantiateViewController(withIdentifier: "DetailsCity") as! DetailsViewController
-                detailsController._city = self.cities[indexPath.row]
-                
-                self.navigationController?.pushViewController(detailsController, animated:true)
-            }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { tableView.deselectRow(at: indexPath, animated: true)
+        if !cities.isEmpty {
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let detailsController = storyBoard.instantiateViewController(withIdentifier: "DetailsCity") as! DetailsViewController
+            detailsController._city = self.cities[indexPath.row]
+            self.navigationController?.pushViewController(detailsController, animated:true)
         }
+    }
 }
 
