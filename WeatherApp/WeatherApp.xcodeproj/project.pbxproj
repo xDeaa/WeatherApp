@@ -25,21 +25,12 @@
 		4D0CE63322954BA90002B533 /* SummaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63122954BA90002B533 /* SummaryCell.xib */; };
 		4D0CE63622954C750002B533 /* HourlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CE63422954C750002B533 /* HourlyCell.swift */; };
 		4D0CE63722954C750002B533 /* HourlyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63522954C750002B533 /* HourlyCell.xib */; };
-		4D0CE64422954CFE0002B533 /* icons8-menu-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63922954CFD0002B533 /* icons8-menu-50.png */; };
-		4D0CE64522954CFE0002B533 /* partly-cloudy-day.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63A22954CFD0002B533 /* partly-cloudy-day.png */; };
-		4D0CE64622954CFE0002B533 /* clear-day.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63B22954CFD0002B533 /* clear-day.png */; };
-		4D0CE64722954CFE0002B533 /* cloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63C22954CFD0002B533 /* cloudy.png */; };
-		4D0CE64822954CFE0002B533 /* partly-cloudy-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63D22954CFD0002B533 /* partly-cloudy-night.png */; };
-		4D0CE64922954CFE0002B533 /* wind.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63E22954CFD0002B533 /* wind.png */; };
-		4D0CE64A22954CFE0002B533 /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE63F22954CFE0002B533 /* snow.png */; };
-		4D0CE64B22954CFE0002B533 /* clear-night.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE64022954CFE0002B533 /* clear-night.png */; };
-		4D0CE64C22954CFE0002B533 /* sleet.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE64122954CFE0002B533 /* sleet.png */; };
-		4D0CE64D22954CFE0002B533 /* fog.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE64222954CFE0002B533 /* fog.png */; };
-		4D0CE64E22954CFE0002B533 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE64322954CFE0002B533 /* rain.png */; };
 		4D0CE6512295506E0002B533 /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CE64F2295506E0002B533 /* DailyCell.swift */; };
 		4D0CE6522295506E0002B533 /* DailyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE6502295506E0002B533 /* DailyCell.xib */; };
 		4D0CE655229583E20002B533 /* ExtraInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CE653229583E20002B533 /* ExtraInfoCell.swift */; };
 		4D0CE656229583E20002B533 /* ExtraInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE654229583E20002B533 /* ExtraInfoCell.xib */; };
+		4D288D292296BA9000563D0A /* DailyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D288D272296BA9000563D0A /* DailyCollectionCell.swift */; };
+		4D288D2A2296BA9000563D0A /* DailyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D288D282296BA9000563D0A /* DailyCollectionCell.xib */; };
 		4D83C8F32296747E006D9EF3 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83C8F12296747E006D9EF3 /* ListCell.swift */; };
 		4D83C8F42296747E006D9EF3 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D83C8F22296747E006D9EF3 /* ListCell.xib */; };
 		89B9C09B0EFDE1A2FCBC6F86 /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1A0C20081C9A0CC3C50525 /* Pods_WeatherAppTests.framework */; };
@@ -91,21 +82,12 @@
 		4D0CE63122954BA90002B533 /* SummaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryCell.xib; sourceTree = "<group>"; };
 		4D0CE63422954C750002B533 /* HourlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCell.swift; sourceTree = "<group>"; };
 		4D0CE63522954C750002B533 /* HourlyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCell.xib; sourceTree = "<group>"; };
-		4D0CE63922954CFD0002B533 /* icons8-menu-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu-50.png"; sourceTree = "<group>"; };
-		4D0CE63A22954CFD0002B533 /* partly-cloudy-day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly-cloudy-day.png"; sourceTree = "<group>"; };
-		4D0CE63B22954CFD0002B533 /* clear-day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-day.png"; sourceTree = "<group>"; };
-		4D0CE63C22954CFD0002B533 /* cloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudy.png; sourceTree = "<group>"; };
-		4D0CE63D22954CFD0002B533 /* partly-cloudy-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly-cloudy-night.png"; sourceTree = "<group>"; };
-		4D0CE63E22954CFD0002B533 /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wind.png; sourceTree = "<group>"; };
-		4D0CE63F22954CFE0002B533 /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
-		4D0CE64022954CFE0002B533 /* clear-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-night.png"; sourceTree = "<group>"; };
-		4D0CE64122954CFE0002B533 /* sleet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleet.png; sourceTree = "<group>"; };
-		4D0CE64222954CFE0002B533 /* fog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fog.png; sourceTree = "<group>"; };
-		4D0CE64322954CFE0002B533 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
 		4D0CE64F2295506E0002B533 /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		4D0CE6502295506E0002B533 /* DailyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCell.xib; sourceTree = "<group>"; };
 		4D0CE653229583E20002B533 /* ExtraInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraInfoCell.swift; sourceTree = "<group>"; };
 		4D0CE654229583E20002B533 /* ExtraInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtraInfoCell.xib; sourceTree = "<group>"; };
+		4D288D272296BA9000563D0A /* DailyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCollectionCell.swift; sourceTree = "<group>"; };
+		4D288D282296BA9000563D0A /* DailyCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCollectionCell.xib; sourceTree = "<group>"; };
 		4D83C8F12296747E006D9EF3 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		4D83C8F22296747E006D9EF3 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		8E6DA0726925E3E17C6BC8BF /* Pods-WeatherAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherAppUITests/Pods-WeatherAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,7 +152,6 @@
 		4D0CE5EA2295222F0002B533 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				4D0CE63822954CEC0002B533 /* Icon */,
 				4D0CE629229546D60002B533 /* Cell */,
 				4D0CE61A229522EB0002B533 /* Model */,
 				4D0CE619229522E20002B533 /* Controller */,
@@ -230,24 +211,6 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
-		4D0CE63822954CEC0002B533 /* Icon */ = {
-			isa = PBXGroup;
-			children = (
-				4D0CE64222954CFE0002B533 /* fog.png */,
-				4D0CE63B22954CFD0002B533 /* clear-day.png */,
-				4D0CE64022954CFE0002B533 /* clear-night.png */,
-				4D0CE63C22954CFD0002B533 /* cloudy.png */,
-				4D0CE63922954CFD0002B533 /* icons8-menu-50.png */,
-				4D0CE63A22954CFD0002B533 /* partly-cloudy-day.png */,
-				4D0CE63D22954CFD0002B533 /* partly-cloudy-night.png */,
-				4D0CE64322954CFE0002B533 /* rain.png */,
-				4D0CE64122954CFE0002B533 /* sleet.png */,
-				4D0CE63F22954CFE0002B533 /* snow.png */,
-				4D0CE63E22954CFD0002B533 /* wind.png */,
-			);
-			path = Icon;
-			sourceTree = "<group>";
-		};
 		4D83C8EF22967418006D9EF3 /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +224,8 @@
 				4D0CE63022954BA90002B533 /* SummaryCell.swift */,
 				4D0CE62B229548820002B533 /* HeaderCell.xib */,
 				4D0CE62A229548820002B533 /* HeaderCell.swift */,
+				4D288D272296BA9000563D0A /* DailyCollectionCell.swift */,
+				4D288D282296BA9000563D0A /* DailyCollectionCell.xib */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -406,24 +371,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0CE62D229548820002B533 /* HeaderCell.xib in Resources */,
-				4D0CE64422954CFE0002B533 /* icons8-menu-50.png in Resources */,
-				4D0CE64B22954CFE0002B533 /* clear-night.png in Resources */,
 				4D0CE656229583E20002B533 /* ExtraInfoCell.xib in Resources */,
+				4D288D2A2296BA9000563D0A /* DailyCollectionCell.xib in Resources */,
 				4D0CE5F6229522300002B533 /* LaunchScreen.storyboard in Resources */,
-				4D0CE64722954CFE0002B533 /* cloudy.png in Resources */,
 				4D0CE5F3229522300002B533 /* Assets.xcassets in Resources */,
-				4D0CE64D22954CFE0002B533 /* fog.png in Resources */,
-				4D0CE64922954CFE0002B533 /* wind.png in Resources */,
 				4D83C8F42296747E006D9EF3 /* ListCell.xib in Resources */,
-				4D0CE64E22954CFE0002B533 /* rain.png in Resources */,
 				4D0CE6522295506E0002B533 /* DailyCell.xib in Resources */,
-				4D0CE64C22954CFE0002B533 /* sleet.png in Resources */,
-				4D0CE64522954CFE0002B533 /* partly-cloudy-day.png in Resources */,
 				4D0CE5F12295222F0002B533 /* Main.storyboard in Resources */,
-				4D0CE64622954CFE0002B533 /* clear-day.png in Resources */,
-				4D0CE64A22954CFE0002B533 /* snow.png in Resources */,
 				4D0CE63722954C750002B533 /* HourlyCell.xib in Resources */,
-				4D0CE64822954CFE0002B533 /* partly-cloudy-night.png in Resources */,
 				4D0CE63322954BA90002B533 /* SummaryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -551,6 +506,7 @@
 				4D0CE62C229548820002B533 /* HeaderCell.swift in Sources */,
 				4D0CE6512295506E0002B533 /* DailyCell.swift in Sources */,
 				4D0CE63622954C750002B533 /* HourlyCell.swift in Sources */,
+				4D288D292296BA9000563D0A /* DailyCollectionCell.swift in Sources */,
 				4D0CE61E2295232A0002B533 /* CitiesData.swift in Sources */,
 				4D0CE62222952DAF0002B533 /* DetailsViewController.swift in Sources */,
 				4D0CE655229583E20002B533 /* ExtraInfoCell.swift in Sources */,

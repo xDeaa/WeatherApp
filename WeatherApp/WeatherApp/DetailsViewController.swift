@@ -37,7 +37,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             decoder.dateDecodingStrategy = .secondsSince1970
             self.weather = try? decoder.decode(Weather.self, from: data)
             self.tableView.reloadData()
-            print(self.weather ?? "" )
+            //print(self.weather ?? "" )
         }){ (Error) in
             print(Error)
         }
@@ -63,7 +63,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }else{
                 if let hourlyCell = tableView.dequeueReusableCell(withIdentifier: "hourlyCell", for: indexPath) as? HourlyCell {
-                    hourlyCell.setData(data: self.weather?.hourly?.data?[indexPath.row])
+                    hourlyCell.setData(data: self.weather?.hourly?.data?[indexPath.row - 1])
                     return hourlyCell
                 }
             }
@@ -76,8 +76,8 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
             }else{
                 if let dailyCell = tableView.dequeueReusableCell(withIdentifier: "dailyCell", for: indexPath) as? DailyCell {
-                    dailyCell.setData(data: self.weather?.daily?.data?[indexPath.row])
-                    
+                    dailyCell.dailyDetails = self.weather?.daily?.data
+
                     return dailyCell
                 }
             }
@@ -105,11 +105,15 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             return 1
         }
         if section == 1{
-            return self.weather?.hourly?.data?.count ?? 0
+            return 1 + (self.weather?.hourly?.data?.count ?? 0)
         }
 
         if section == 2 {
-            return self.weather?.daily?.data?.count ?? 0
+            if (self.weather?.daily?.data?.count ?? 0 > 0) {
+                return 2
+            } else {
+                return 0
+            }
         }
         if section == 3 {
             return 2
