@@ -15,6 +15,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
     
     @IBOutlet weak var tableView: UITableView!
     let cities: [City] = CitiesData.list
+    var resultSearchController: UISearchController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,28 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         self.tableView.dataSource = self
         self.tableView.isHidden = true
         tableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "listCell")
-        
+        initSearchBar()
         for city in cities {
             let pin = MKPointAnnotation()
             pin.title = city.name
             pin.coordinate = city.coordinates
             map.addAnnotation(pin)
         }
+    }
+    
+    func initSearchBar(){
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "searchCity") as! SearchBar
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -44,11 +60,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         if choiceButton.selectedSegmentIndex == 1{
             map.isHidden = true
             tableView.isHidden = false
-            
         }else{
             map.isHidden = false
             tableView.isHidden = true
-            
         }
     }
     
@@ -64,16 +78,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         return UITableViewCell()
     }
     
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            tableView.deselectRow(at: indexPath, animated: true)
-    
-            if !cities.isEmpty {
-                let storyBoard = UIStoryboard(name: "Main", bundle:nil)
-                let detailsController = storyBoard.instantiateViewController(withIdentifier: "DetailsCity") as! DetailsViewController
-                detailsController._city = self.cities[indexPath.row]
-                
-                self.navigationController?.pushViewController(detailsController, animated:true)
-            }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { tableView.deselectRow(at: indexPath, animated: true)
+        if !cities.isEmpty {
+            let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+            let detailsController = storyBoard.instantiateViewController(withIdentifier: "DetailsCity") as! DetailsViewController
+            detailsController._city = self.cities[indexPath.row]
+            self.navigationController?.pushViewController(detailsController, animated:true)
         }
+    }
 }
 

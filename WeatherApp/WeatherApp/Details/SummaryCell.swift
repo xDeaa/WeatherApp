@@ -12,7 +12,8 @@ class SummaryCell: UITableViewCell {
 
     @IBOutlet weak var forecast: UILabel!
     
-    func setSummarry(name: String?){
+    func setSummarry(name: String?,image: String){
         self.forecast.text = name ?? ""
+        BaseBgColor.changeColor(target: self.contentView, image: image, labels: [forecast])
     }
 }

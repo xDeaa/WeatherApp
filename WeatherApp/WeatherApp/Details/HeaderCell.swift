@@ -14,9 +14,10 @@ class HeaderCell: UITableViewCell {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var resumeLabel: UILabel!
     
-    func setTemperature(image:String?,temperature:String?,resume:String?){
-        self.icon.image = UIImage(named: "\(image ?? "").png")
-        self.temperatureLabel.text = "\(temperature ?? "")°C"
-        self.resumeLabel.text = resume ?? ""
+    func setTemperature(data: Currently?){
+        self.icon.image = UIImage(named: "\(data?.icon ?? "").png")
+        self.temperatureLabel.text = "\(data?.temperature?.toRoundString() ?? "")°C"
+        self.resumeLabel.text = data?.summary ?? ""
+        BaseBgColor.changeColor(target: self.contentView, image: data?.icon ?? "", labels: [temperatureLabel,resumeLabel])
     }
 }
