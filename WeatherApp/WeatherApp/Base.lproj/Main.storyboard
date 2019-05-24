@@ -81,34 +81,32 @@
             <point key="canvasLocation" x="718" y="54"/>
         </scene>
         <!--Search Bar-->
-        <scene sceneID="Qkc-tf-YCc">
+        <scene sceneID="eGg-8I-SfY">
             <objects>
-                <viewController storyboardIdentifier="searchCity" id="zGF-WL-9sS" customClass="SearchBar" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hfo-Sj-OwV">
+                <tableViewController storyboardIdentifier="searchCity" id="lQg-F2-p92" customClass="SearchBar" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ThA-8M-HXn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="in3-KT-GrR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="in3-KT-GrR" firstAttribute="leading" secondItem="ITr-jX-OpI" secondAttribute="leading" id="LRJ-md-hGb"/>
-                            <constraint firstItem="ITr-jX-OpI" firstAttribute="bottom" secondItem="in3-KT-GrR" secondAttribute="bottom" id="W04-Px-cd3"/>
-                            <constraint firstItem="in3-KT-GrR" firstAttribute="top" secondItem="ITr-jX-OpI" secondAttribute="top" id="laV-wr-MTM"/>
-                            <constraint firstItem="ITr-jX-OpI" firstAttribute="trailing" secondItem="in3-KT-GrR" secondAttribute="trailing" id="mke-rZ-udC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ITr-jX-OpI"/>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="in3-KT-GrR" id="kaf-Jn-4Yx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0ww-Ir-6Eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hFe-gG-bKm">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hFe-gG-bKm" id="bsG-bA-vm2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lQg-F2-p92" id="1gg-G9-wUB"/>
+                            <outlet property="delegate" destination="lQg-F2-p92" id="cLf-rL-gze"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7e-gJ-HED" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1391" y="57"/>
+            <point key="canvasLocation" x="1379" y="54"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="B4l-y0-em1">

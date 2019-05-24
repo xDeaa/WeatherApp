@@ -12,11 +12,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var choiceButton: UISegmentedControl!
-    
     @IBOutlet weak var tableView: UITableView!
+    
     let cities: [City] = CitiesData.list
     var resultSearchController: UISearchController? = nil
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
