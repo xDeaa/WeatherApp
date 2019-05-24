@@ -17,7 +17,7 @@ class HourlyCell: UITableViewCell {
     @IBOutlet weak var temp: UIImageView!
     @IBOutlet weak var humidity: UIImageView!
     
-    func setData(data: Currently?){
+    func setData(data: Currently?, theme: String){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH"
         self.icon.image = UIImage(named:data?.icon ?? "")
@@ -25,13 +25,15 @@ class HourlyCell: UITableViewCell {
         if let _humidity = data?.humidity {
             self.humidityLabel.text = "\((_humidity * 100).toRoundString())"
         }
-        self.hoursLabel.text = dateFormatter.string(from: data?.time ?? Date.init())
+        self.hoursLabel.text = dateFormatter.string(from: data?.time ?? Date.init()) + "H"
         self.temperatureLabel.text = "\(data?.temperature?.toRoundString() ?? "")°C"
-        
-        if data?.temperature ?? 0.0 > 18.0{
+
+        if data?.temperature ?? 0.0 > 18.0 {
             self.temp.image = UIImage(named: "hot.png")
-        }else{
+        } else {
             self.temp.image = UIImage(named: "cold.png")
         }
+        
+        BaseBgColor.changeColor(target: self.contentView, image: theme, labels: [temperatureLabel,humidityLabel,hoursLabel])
     }
 }

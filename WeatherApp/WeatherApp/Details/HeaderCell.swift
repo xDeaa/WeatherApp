@@ -18,5 +18,6 @@ class HeaderCell: UITableViewCell {
         self.icon.image = UIImage(named: "\(data?.icon ?? "").png")
         self.temperatureLabel.text = "\(data?.temperature?.toRoundString() ?? "")°C"
         self.resumeLabel.text = data?.summary ?? ""
+        BaseBgColor.changeColor(target: self.contentView, image: data?.icon ?? "", labels: [temperatureLabel,resumeLabel])
     }
 }

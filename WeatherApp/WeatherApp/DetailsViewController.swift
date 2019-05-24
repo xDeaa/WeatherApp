@@ -81,6 +81,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var currentIcon = self.weather?.currently?.icon ?? ""
         switch indexPath.section {
         case 0:
             if let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as? HeaderCell {
@@ -93,7 +94,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 return initSummaryCell(param: self.weather?.hourly?.summary, indexPath: indexPath)
             } else {
                 if let hourlyCell = tableView.dequeueReusableCell(withIdentifier: "hourlyCell", for: indexPath) as? HourlyCell {
-                    hourlyCell.setData(data: self.weather?.hourly?.data?[indexPath.row - 1])
+                    hourlyCell.setData(data: self.weather?.hourly?.data?[indexPath.row - 1], theme: currentIcon)
                     return hourlyCell
                 }
             }
@@ -111,11 +112,11 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             let extraCell = tableView.dequeueReusableCell(withIdentifier: "extraCell", for: indexPath) as? ExtraInfoCell
             let cell = extraCell ?? UITableViewCell()
             if indexPath.row == 0 {
-                extraCell?.setInfo(titleLeft: "Humidity", value: self.weather?.currently, tilteRigth: "Wind Speed")
+                extraCell?.setInfo(titleLeft: "Humidity", value: self.weather?.currently, tilteRigth: "Wind Speed",theme: currentIcon)
                 return cell
                 
             } else {
-                extraCell?.setInfo(titleLeft: "Pressure", value: self.weather?.currently, tilteRigth: "UV Index")
+                extraCell?.setInfo(titleLeft: "Pressure", value: self.weather?.currently, tilteRigth: "UV Index", theme: currentIcon)
                 return cell
             }
         default:
@@ -127,7 +128,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func initSummaryCell(param: String?, indexPath: IndexPath) -> UITableViewCell {
         if let summaryCell = tableView.dequeueReusableCell(withIdentifier: "summaryCell", for: indexPath) as? SummaryCell {
-            summaryCell.setSummarry(name: param)
+            summaryCell.setSummarry(name: param,image: self.weather?.currently?.icon ?? "" )
             return summaryCell
         }
         return UITableViewCell()

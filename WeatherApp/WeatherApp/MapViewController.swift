@@ -15,6 +15,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
     
     @IBOutlet weak var tableView: UITableView!
     let cities: [City] = CitiesData.list
+    var resultSearchController: UISearchController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,28 @@ class MapViewController: UIViewController, MKMapViewDelegate, UITableViewDelegat
         self.tableView.dataSource = self
         self.tableView.isHidden = true
         tableView.register(UINib(nibName: "ListCell", bundle: nil), forCellReuseIdentifier: "listCell")
-        
+        initSearchBar()
         for city in cities {
             let pin = MKPointAnnotation()
             pin.title = city.name
             pin.coordinate = city.coordinates
             map.addAnnotation(pin)
         }
+    }
+    
+    func initSearchBar(){
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "searchCity") as! SearchBar
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

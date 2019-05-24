@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,6 +37,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G3Z-Nd-eqt">
+                                        <rect key="frame" x="70" y="53.5" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="1nm-Xj-GJk"/>
+                                            <constraint firstAttribute="width" constant="20" id="w5u-l3-2go"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -45,8 +52,12 @@
                                     <constraint firstItem="wWt-Q6-KLT" firstAttribute="trailing" secondItem="eAs-aU-Ijp" secondAttribute="trailing" id="Fdz-4Z-Iw3"/>
                                     <constraint firstItem="eAs-aU-Ijp" firstAttribute="leading" secondItem="goE-49-jR2" secondAttribute="leading" constant="16" id="JPx-nV-Y81"/>
                                     <constraint firstAttribute="trailing" secondItem="eAs-aU-Ijp" secondAttribute="trailing" constant="16" id="LEM-ES-XUg"/>
+                                    <constraint firstItem="G3Z-Nd-eqt" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eAs-aU-Ijp" secondAttribute="trailing" id="Nfz-0x-r7E"/>
                                     <constraint firstItem="wWt-Q6-KLT" firstAttribute="leading" secondItem="eAs-aU-Ijp" secondAttribute="leading" id="XqE-pt-nLz"/>
+                                    <constraint firstItem="G3Z-Nd-eqt" firstAttribute="top" secondItem="eAs-aU-Ijp" secondAttribute="bottom" constant="18" id="lae-Uu-zPG"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wWt-Q6-KLT" secondAttribute="bottom" constant="16" id="pEr-HZ-7SQ"/>
+                                    <constraint firstItem="G3Z-Nd-eqt" firstAttribute="leading" secondItem="eAs-aU-Ijp" secondAttribute="leading" constant="54" id="suX-l5-yei"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="G3Z-Nd-eqt" secondAttribute="bottom" constant="16" id="tD3-PD-0eD"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUR-J3-TFe">
@@ -87,9 +98,9 @@
                     <constraint firstItem="2ip-Qm-zId" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="txa-zA-t98"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="icon" destination="G3Z-Nd-eqt" id="MfT-mG-Jy1"/>
                 <outlet property="leftInfo" destination="eAs-aU-Ijp" id="1Yw-GI-4jf"/>
                 <outlet property="leftValue" destination="wWt-Q6-KLT" id="jGX-og-6fp"/>
                 <outlet property="rightInfo" destination="9b0-y0-XvJ" id="cnT-wJ-8Ku"/>

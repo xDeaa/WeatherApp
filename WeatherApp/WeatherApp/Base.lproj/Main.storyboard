@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PY1-KR-4c6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PY1-KR-4c6">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -80,6 +80,36 @@
             </objects>
             <point key="canvasLocation" x="718" y="54"/>
         </scene>
+        <!--Search Bar-->
+        <scene sceneID="Qkc-tf-YCc">
+            <objects>
+                <viewController storyboardIdentifier="searchCity" id="zGF-WL-9sS" customClass="SearchBar" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfo-Sj-OwV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="in3-KT-GrR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="in3-KT-GrR" firstAttribute="leading" secondItem="ITr-jX-OpI" secondAttribute="leading" id="LRJ-md-hGb"/>
+                            <constraint firstItem="ITr-jX-OpI" firstAttribute="bottom" secondItem="in3-KT-GrR" secondAttribute="bottom" id="W04-Px-cd3"/>
+                            <constraint firstItem="in3-KT-GrR" firstAttribute="top" secondItem="ITr-jX-OpI" secondAttribute="top" id="laV-wr-MTM"/>
+                            <constraint firstItem="ITr-jX-OpI" firstAttribute="trailing" secondItem="in3-KT-GrR" secondAttribute="trailing" id="mke-rZ-udC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ITr-jX-OpI"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="in3-KT-GrR" id="kaf-Jn-4Yx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ww-Ir-6Eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1391" y="57"/>
+        </scene>
         <!--Details View Controller-->
         <scene sceneID="B4l-y0-em1">
             <objects>
@@ -122,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XW-VD-CZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357.5999999999999" y="53.523238380809602"/>
+            <point key="canvasLocation" x="2052" y="54"/>
         </scene>
     </scenes>
 </document>
