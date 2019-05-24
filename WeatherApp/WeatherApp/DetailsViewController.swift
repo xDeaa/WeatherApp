@@ -48,18 +48,16 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
             return
         }
         setLoaderVisible(true)
-
-
-        RequestManager.getData(uri:"https://api.darksky.net/forecast/04018ef3bc82525aa23cb62077890bc1/\(_lat),\(_long)?units=si", success: { (data) in
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .secondsSince1970
-            self.weather = try? decoder.decode(Weather.self, from: data)
-            self.tableView.reloadData()
-//            print(self.weather ?? "" )
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.setLoaderVisible(false)
-            }
+    RequestManager.getData(uri:"https://api.darksky.net/forecast/04018ef3bc82525aa23cb62077890bc1/\(_lat),\(_long)?units=si", success: { (data) in
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .secondsSince1970
+        self.weather = try? decoder.decode(Weather.self, from: data)
+        self.tableView.reloadData()
+        print(self.weather ?? "" )
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.setLoaderVisible(false)
+        }
         }){ (Error) in
             print(Error)
             self.setLoaderVisible(false)
@@ -81,7 +79,7 @@ class DetailsViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var currentIcon = self.weather?.currently?.icon ?? ""
+        let currentIcon = self.weather?.currently?.icon ?? ""
         switch indexPath.section {
         case 0:
             if let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as? HeaderCell {
