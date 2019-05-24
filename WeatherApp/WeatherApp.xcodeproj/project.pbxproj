@@ -29,6 +29,8 @@
 		4D0CE6522295506E0002B533 /* DailyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE6502295506E0002B533 /* DailyCell.xib */; };
 		4D0CE655229583E20002B533 /* ExtraInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CE653229583E20002B533 /* ExtraInfoCell.swift */; };
 		4D0CE656229583E20002B533 /* ExtraInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0CE654229583E20002B533 /* ExtraInfoCell.xib */; };
+		4D19904D22982DA400E304C9 /* BaseBgColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D19904C22982DA400E304C9 /* BaseBgColor.swift */; };
+		4D199051229835F300E304C9 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D199050229835F300E304C9 /* loader.json */; };
 		4D288D292296BA9000563D0A /* DailyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D288D272296BA9000563D0A /* DailyCollectionCell.swift */; };
 		4D288D2A2296BA9000563D0A /* DailyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D288D282296BA9000563D0A /* DailyCollectionCell.xib */; };
 		4D83C8F32296747E006D9EF3 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83C8F12296747E006D9EF3 /* ListCell.swift */; };
@@ -86,6 +88,8 @@
 		4D0CE6502295506E0002B533 /* DailyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCell.xib; sourceTree = "<group>"; };
 		4D0CE653229583E20002B533 /* ExtraInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraInfoCell.swift; sourceTree = "<group>"; };
 		4D0CE654229583E20002B533 /* ExtraInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtraInfoCell.xib; sourceTree = "<group>"; };
+		4D19904C22982DA400E304C9 /* BaseBgColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBgColor.swift; sourceTree = "<group>"; };
+		4D199050229835F300E304C9 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		4D288D272296BA9000563D0A /* DailyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCollectionCell.swift; sourceTree = "<group>"; };
 		4D288D282296BA9000563D0A /* DailyCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCollectionCell.xib; sourceTree = "<group>"; };
 		4D83C8F12296747E006D9EF3 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 			children = (
 				4D83C8F02296744D006D9EF3 /* Map */,
 				4D83C8EF22967418006D9EF3 /* Details */,
+				4D19904C22982DA400E304C9 /* BaseBgColor.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 		948316F92297194400B3638B /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				4D199050229835F300E304C9 /* loader.json */,
 				4D0CE623229539070002B533 /* RequestManager.swift */,
 			);
 			path = Config;
@@ -381,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D199051229835F300E304C9 /* loader.json in Resources */,
 				4D0CE62D229548820002B533 /* HeaderCell.xib in Resources */,
 				4D0CE656229583E20002B533 /* ExtraInfoCell.xib in Resources */,
 				4D288D2A2296BA9000563D0A /* DailyCollectionCell.xib in Resources */,
@@ -465,14 +472,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WeatherApp/Pods-WeatherApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/ForecastIO/ForecastIO.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ForecastIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -513,6 +520,7 @@
 				4D0CE6202295254C0002B533 /* City.swift in Sources */,
 				4D0CE624229539070002B533 /* RequestManager.swift in Sources */,
 				4D0CE63222954BA90002B533 /* SummaryCell.swift in Sources */,
+				4D19904D22982DA400E304C9 /* BaseBgColor.swift in Sources */,
 				4D83C8F32296747E006D9EF3 /* ListCell.swift in Sources */,
 				4D0CE62C229548820002B533 /* HeaderCell.swift in Sources */,
 				4D0CE6512295506E0002B533 /* DailyCell.swift in Sources */,
@@ -705,7 +713,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.WeatherApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -723,7 +731,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.WeatherApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

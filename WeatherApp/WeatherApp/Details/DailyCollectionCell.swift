@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DailyCollectionCell: UICollectionViewCell {
+class DailyCollectionCell: UICollectionViewCell{
 
     @IBOutlet weak var daysLabel: UILabel!
     @IBOutlet weak var icon: UIImageView!
@@ -28,37 +28,8 @@ class DailyCollectionCell: UICollectionViewCell {
         self.temperatureMin.text = "\(data?.temperatureMin?.toRoundString()  ?? "")°C"
         self.min.image = UIImage(named: "cold.png")
         self.max.image = UIImage(named: "hot.png")
-        changeColor(image: data?.icon ?? "" )
+        BaseBgColor.changeColor(target: self.view, image: data?.icon ?? "",labels:[daysLabel,temperatureMin,temperatureMax])
     }
-    
-    func changeColor(image: String){
-
-        switch image {
-        case "fog":
-            self.view.backgroundColor = UIColor(red:0.67, green:0.64, blue:0.64, alpha:0.5)
-        case "clear-day":
-            self.view.backgroundColor = UIColor(red:0.93, green:0.94, blue:0.29, alpha:0.5)
-        case "clear-night":
-            self.view.backgroundColor = UIColor(red:0.28, green:0.28, blue:0.26, alpha:1.0)
-        case "cloudy":
-            self.view.backgroundColor = UIColor(red:0.36, green:0.70, blue:0.85, alpha:1.0)
-        case "partly-cloudy-day":
-            self.view.backgroundColor = UIColor(red:0.91, green:0.94, blue:0.59, alpha:1.0)
-        case "partly-cloudy-night":
-            self.view.backgroundColor = UIColor(red:0.65, green:0.66, blue:0.59, alpha:1.0)
-        case "rain":
-            self.view.backgroundColor = UIColor(red:0.20, green:0.60, blue:0.66, alpha:1.0)
-        case "sleet":
-            self.view.backgroundColor = UIColor(red:0.04, green:0.58, blue:0.64, alpha:1.0)
-        case "snow":
-            self.view.backgroundColor = UIColor.white
-        case "wind":
-            self.view.backgroundColor = UIColor.white
-        default:
-            self.view.backgroundColor = UIColor.white
-        }
-    }
-
 }
 
 extension Double {

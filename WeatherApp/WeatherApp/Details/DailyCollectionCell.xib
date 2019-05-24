@@ -72,7 +72,7 @@
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <color key="tintColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
             <constraints>
                 <constraint firstItem="6QM-85-J4c" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="2F7-cY-Ivb"/>
@@ -107,7 +107,7 @@
                 <outlet property="temperatureMin" destination="ubK-o9-5Pc" id="7K1-S9-Ge6"/>
                 <outlet property="view" destination="KcE-ph-EFW" id="yL2-zZ-qtf"/>
             </connections>
-            <point key="canvasLocation" x="-182.40000000000001" y="-79.610194902548727"/>
+            <point key="canvasLocation" x="-182.40000000000001" y="-80.50974512743629"/>
         </collectionViewCell>
     </objects>
 </document>

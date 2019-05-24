@@ -1,20 +1,20 @@
 PODS:
   - Alamofire (4.8.2)
-  - ForecastIO (6.0.1)
+  - lottie-ios (3.0.4)
 
 DEPENDENCIES:
   - Alamofire
-  - ForecastIO
+  - lottie-ios
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - ForecastIO
+    - lottie-ios
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  ForecastIO: 2e3f47e81d0bf8301c632ad56d2ceb0a64083340
+  lottie-ios: 55a2de40418f8de2b155efaba4d4d1a025a5c570
 
-PODFILE CHECKSUM: e53aaa10551c0ef5d6bfbca65394f2834eac0892
+PODFILE CHECKSUM: 5e082a27890b589c1804a285e9ef903a3321995c
 
 COCOAPODS: 1.6.1

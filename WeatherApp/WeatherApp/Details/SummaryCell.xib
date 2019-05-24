@@ -33,6 +33,7 @@
                     <constraint firstItem="nCZ-hF-UWy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="igP-O1-hGV"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="forecast" destination="nCZ-hF-UWy" id="lPO-Ah-brf"/>
